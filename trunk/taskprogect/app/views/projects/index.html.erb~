@@ -1,0 +1,6 @@
+<h2>Projects</h2>
+<ul>
+<% for project in @projects %>
+<li><%= project.name%> (<%= pluralize project.tasks.size, 'task' %>)</li>
+<% end %>
+</ul>

@@ -1,0 +1,7 @@
+    <%= render "shared/error_messages", :target => @task %>
+    <%= f.label :name %>
+    <%= f.text_field :name  %> </br>
+    <%= f.label :complete %>
+    <%= f.select(:complete, [["ne complete", false], ["complete", true]]) %> </br>
+    <%= f.label "project_id" %>
+    <%= f.select(:project_id, Project.all.collect{|p| [p.name, p.id]}) %> </br>

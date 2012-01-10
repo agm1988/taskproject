@@ -1,0 +1,9 @@
+<h2>Projects</h2>
+  <%= link_to "Tasks", tasks_path %>
+<ul>
+<% for project in @projects %>
+<li><%= project.name%> (<%= pluralize project.tasks.size, 'task' %>)</li>
+<% end %>
+</ul>
+<%= link_to "archive", task_archive_path(:comp => 1) %>
+<%= task_archive_path %>

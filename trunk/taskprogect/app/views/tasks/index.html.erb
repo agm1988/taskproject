@@ -1,0 +1,23 @@
+<%= flash[:notice] %>
+
+<p><%= link_to "Projects", projects_path %> | <%= link_to "completed tasks", completed_tasks_path %></p>
+
+<p>Name | created_at | project_id</p>
+<% for task in @tasks %>
+
+<p><%= task.name%>
+<%= task.created_at.to_s(:due_time) %>
+  | <%= task.project_id %> |
+   <%= task.complete %>
+  <%= link_to "Show", task_path(task) %>
+  <%= link_to "Edit", edit_task_path(task) %>
+  <%= button_to "Destroy", task, :method => :delete, :confirm => "Are you sure?" %>
+  <%= link_to "Delete", task, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{task.name}" %>
+  <%= (link_to "Mark as complete", markcomplete_task_path(task), :method => :put) if !task.complete? %>
+
+
+
+</p>
+<% end %>
+
+<%= link_to "Create new task", new_task_path %>

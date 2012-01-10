@@ -1,0 +1,22 @@
+<%= link_to "<< Back to list tasks", tasks_path %>
+
+
+    <%= form_for(@task, new_task_path ) do |f| %>
+    <%= render "form", :f => f %>
+
+     <%= submit_tag "create new task" %>
+<% end %>
+
+<%= @projects.inspect %>
+<%= new_task_path.inspect %>
+
+
+
+
+
+
+
+
+
+
+

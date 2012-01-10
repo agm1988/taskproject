@@ -1,0 +1,2 @@
+<h1>Projects layout!</h1>
+<%= yield %>

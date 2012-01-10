@@ -1,0 +1,8 @@
+<%= link_to "<< Back to list tasks", tasks_path %>
+
+
+    <%= form_for(@task) do |f| %>
+    <%= render "form", :f => f %>
+
+     <%= submit_tag "update task" %>
+<% end %>

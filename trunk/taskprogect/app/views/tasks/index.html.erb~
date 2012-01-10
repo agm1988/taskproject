@@ -1,0 +1,5 @@
+<% for task in @tasks %>
+<p><%= task.name%>
+<%= task.created_at.due_time %>
+</p>
+<% end %>

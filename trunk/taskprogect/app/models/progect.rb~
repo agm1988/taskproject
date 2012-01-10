@@ -1,0 +1,5 @@
+class Progect < ActiveRecord::Base
+  
+    has_many :tasks
+  
+end

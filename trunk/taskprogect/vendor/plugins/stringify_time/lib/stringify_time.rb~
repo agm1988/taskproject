@@ -1,0 +1,26 @@
+# StringifyTime
+Module StringifyTime
+
+def stringfy_time(*names)
+  names.each do |name|
+    define_method "#{name}_string" do
+    read_attribute(name).to_s(:db)
+    end
+    
+    define_method "#{name}_string=" do |time_str|
+      degin
+      write_attribute(name, Time.parse(time_str))
+      resque ArgumentError
+      instance_variable_set("@#{name}_invalid", true)
+    end
+      
+    end
+    
+    define_method"#{name}_invalid?" do
+      instance_variable_get("#{name}_valid?")
+    end
+    
+  end
+end
+
+end

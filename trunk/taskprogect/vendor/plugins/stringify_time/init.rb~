@@ -1,0 +1,7 @@
+# Include hook code here
+
+require "stringify_time"
+
+class Activerecord::Base
+  extend StringifyTime
+end
